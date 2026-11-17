@@ -12,15 +12,11 @@
     /* ---------- Icônes (traits simples, couleur = currentColor) ---------- */
     var TRACES = {
         pinceau: '<path d="M18 3l3 3-9 9-3-3z"/><path d="M9 12c-3 0-4 2-4 4s-1 3-2 3c2 2 7 2 8-1 .5-1.5 0-3 1-3"/>',
-        pneu: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/>',
         flocon: '<path d="M12 2v20M4 7l16 10M20 7L4 17"/><path d="M9 4l3 3 3-3M9 20l3-3 3 3"/>',
         marteau: '<path d="M14 4l6 6-3 3-6-6z"/><path d="M11 7L3 15l3 3 8-8"/>',
         brillance: '<path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/><path d="M19 3v4M17 5h4"/>',
         cle: '<path d="M15 3a6 6 0 0 0-5.6 8.2L3 17.6V21h3.4l6.4-6.4A6 6 0 1 0 15 3z"/><circle cx="16" cy="8" r="1.5"/>',
         bouclier: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
-        engrenage: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>',
-        eclair: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
-        ecran: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4"/>',
         tel: '<path d="M5 3h4l2 5-3 2a11 11 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/>',
         wa: '<path d="M3 21l1.6-4.8A9 9 0 1 1 8 19.6z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"/>',
         maison: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
@@ -32,14 +28,9 @@
         question: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17v.5"/>',
         tarif: '<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>',
         reglage: '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
-        cadenas: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
         carte: '<path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
         horloge: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
         plan: '<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/>',
-        upload: '<path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/>',
-        liste: '<path d="M8 6h12M8 12h12M8 18h12M4 6h0M4 12h0M4 18h0"/>',
-        tableau: '<rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/>',
-        sortie: '<path d="M10 4H4v16h6"/><path d="M14 8l4 4-4 4M18 12H9"/>'
     };
     function icone(nom) {
         return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (TRACES[nom] || TRACES.cle) + "</svg>";
@@ -76,15 +67,12 @@
     ];
     var NAV_PLUS = [
         ["tarifs.html", "Preços", "tarif", "precos"],
-        ["faq.html", "Perguntas frequentes", "question", "faq"]
+        ["faq.html", "Perguntas frequentes", "question", "faq"],
+        ["parametres.html", "Definições", "reglage", "definicoes"]
     ];
-    var NAV_COMPTE = [
-        ["parametres.html", "Definições", "reglage", "definicoes"],
-        ["admin-connexion.html", "Administração", "cadenas", "admin"]
-    ];
-    function liens(liste, classe) {
+    function liens(liste) {
         return liste.map(function (l) {
-            return '<a href="' + l[0] + '"' + (l[3] === PAGE ? ' class="actif ' + (classe || "") + '" aria-current="page"' : (classe ? ' class="' + classe + '"' : "")) + ">" + icone(l[2]) + "<span>" + l[1] + "</span></a>";
+            return '<a href="' + l[0] + '"' + (l[3] === PAGE ? ' class="actif" aria-current="page"' : "") + ">" + icone(l[2]) + "<span>" + l[1] + "</span></a>";
         }).join("");
     }
 
@@ -94,7 +82,7 @@
             haut.outerHTML =
                 '<div class="bandeau-maquete">Maquete de demonstração — os textos e fotos são provisórios. <a href="plan-du-site.html">Ver todas as páginas</a></div>' +
                 '<div class="barre-info"><div class="conteneur">' +
-                '<span><span class="masquer-mobile">' + CONTACT.horaires + '<span class="sep">|</span>' + CONTACT.adresse + '</span></span>' +
+                '<span><span class="masquer-mobile">' + CONTACT.horaires + '<span class="sep">|</span>' + CONTACT.adresse_courte + '</span></span>' +
                 '<span>Precisa de ajuda? <a href="' + CONTACT.tel_lien + '">' + CONTACT.tel_affiche + "</a></span>" +
                 "</div></div>" +
                 '<header class="entete"><div class="conteneur">' +
@@ -107,16 +95,15 @@
                 "</div></header>";
         }
 
-        // Tiroir ☰ (croquis : Paramètres, Admin, …)
+        // Tiroir ☰ (croquis : Paramètres, …). L'admin a été retiré du site vitrine.
         document.body.insertAdjacentHTML("beforeend",
             '<div class="voile" hidden></div>' +
             '<aside class="tiroir" id="tiroir" aria-label="Menu" aria-hidden="true">' +
             '<div class="tiroir-haut"><img src="img/logo.jpg" alt="Auto PGP Oficina" width="75" height="46"><button class="fermer" type="button" aria-label="Fechar o menu">×</button></div>' +
             "<nav><h4>Navegação</h4>" + liens(NAV) +
             "<h4>Informações</h4>" + liens(NAV_PLUS) +
-            "<h4>Conta</h4>" + liens(NAV_COMPTE.slice(0, 1)) + liens(NAV_COMPTE.slice(1), "admin") +
             '<h4>Contacto</h4><a href="' + CONTACT.tel_lien + '">' + icone("tel") + "<span>" + CONTACT.tel_affiche + "</span></a>" +
-            '<a href="' + lien_wa() + '" target="_blank" rel="noopener">' + icone("wa") + "<span>WhatsApp</span></a>" +
+            '<a href="' + lien_wa() + '" target="_blank" rel="noopener">' + icone("wa") + "<span>WhatsApp " + CONTACT.wa_affiche + "</span></a>" +
             "</nav></aside>");
 
         var pied = document.getElementById("pied");
@@ -124,15 +111,15 @@
             pied.outerHTML =
                 '<footer class="pied"><div class="conteneur"><div class="colonnes">' +
                 '<div><img class="logo-blanc" src="img/logo.jpg" alt="Auto PGP Oficina" width="180" height="111" loading="lazy">' +
-                "<p>Pedro Jorge Pungui — Prestações de Serviços. O cuidado que a sua viatura merece.</p></div>" +
+                "<p>Pedro Jorge Pungui — Prestações de Serviços.<br><b style=\"color:#fff\">" + CONTACT.slogan + ".</b></p></div>" +
                 "<div><h4>Serviços</h4><ul>" + SERVICES.slice(0, 6).map(function (s) { return '<li><a href="service.html?s=' + s.id + '">' + s.nom + "</a></li>"; }).join("") +
                 '<li><a href="services.html">Todos os serviços →</a></li></ul></div>' +
                 '<div><h4>A oficina</h4><ul><li><a href="realisations.html">Os nossos trabalhos</a></li><li><a href="avis.html">Avaliações</a></li><li><a href="conseils.html">Conselhos</a></li><li><a href="a-propos.html">Sobre nós</a></li><li><a href="tarifs.html">Preços</a></li><li><a href="faq.html">Perguntas frequentes</a></li></ul></div>' +
                 '<div><h4>Contacto</h4><ul><li><a class="tel" href="' + CONTACT.tel_lien + '">' + CONTACT.tel_affiche + "</a></li>" +
-                '<li><a href="' + lien_wa() + '" target="_blank" rel="noopener">WhatsApp</a></li><li>' + CONTACT.adresse + "</li><li>" + CONTACT.horaires + '</li><li><a href="contact.html">Página de contacto</a></li></ul></div>' +
+                '<li><a href="' + lien_wa() + '" target="_blank" rel="noopener">WhatsApp ' + CONTACT.wa_affiche + "</a></li><li>" + CONTACT.adresse + "</li><li>" + CONTACT.horaires + '</li><li><a href="contact.html">Página de contacto</a></li></ul></div>' +
                 "</div>" +
                 '<div class="bas"><span>© 2026 Auto PGP Oficina · Pedro Jorge Pungui, Prestações de Serviços</span>' +
-                '<nav><a href="confidentialite.html">Privacidade</a><a href="conditions.html">Termos de utilização</a><a href="plan-du-site.html">Mapa do site</a><a href="admin-connexion.html">Administração</a></nav></div>' +
+                '<nav><a href="confidentialite.html">Privacidade</a><a href="conditions.html">Termos de utilização</a><a href="plan-du-site.html">Mapa do site</a></nav></div>' +
                 "</div></footer>" +
                 '<div class="flottant"><a class="f-tel" href="' + CONTACT.tel_lien + '" aria-label="Ligar">' + icone("tel") + '<span class="txt">Ligar</span></a>' +
                 '<a class="f-wa" href="' + lien_wa() + '" target="_blank" rel="noopener" aria-label="WhatsApp">' + icone("wa") + '<span class="txt">WhatsApp</span></a></div>';
@@ -153,23 +140,6 @@
         voile.addEventListener("click", function () { ouvrir(false); });
         $(".fermer", tiroir).addEventListener("click", function () { ouvrir(false); });
         document.addEventListener("keydown", function (e) { if (e.key === "Escape" && tiroir.classList.contains("ouvert")) ouvrir(false); });
-    }
-
-    /* ---------- Admin : barre latérale ---------- */
-    var NAV_ADMIN = [
-        ["admin-tableau.html", "Painel", "tableau", "a-painel"],
-        ["admin-publier.html", "Publicar fotos / vídeos", "upload", "a-publicar"],
-        ["admin-medias.html", "Publicações", "galerie", "a-medias"],
-        ["admin-avis.html", "Avaliações", "etoile", "a-avis"],
-        ["admin-services.html", "Serviços e textos", "cle", "a-servicos"]
-    ];
-    function injecter_admin() {
-        var cote = document.getElementById("admin-cote");
-        if (!cote) return;
-        cote.outerHTML = '<aside class="admin-cote"><img class="logo-blanc" src="img/logo.jpg" alt="Auto PGP Oficina" width="218" height="134">' +
-            liens(NAV_ADMIN) +
-            '<div class="bas"><a href="index.html">' + icone("maison") + "<span>Ver o site</span></a>" +
-            '<a href="admin-connexion.html">' + icone("sortie") + "<span>Terminar sessão</span></a></div></aside>";
     }
 
     /* ---------- Rendus ---------- */
@@ -195,7 +165,7 @@
     function rendu_grille_services(boite) {
         boite.innerHTML = SERVICES.map(function (s) {
             return '<a class="item" href="service.html?s=' + s.id + '">' + icone(s.icone) +
-                "<h3>" + s.nom + (s.a_confirmar ? ' <span class="badge">a confirmar</span>' : "") + "</h3>" +
+                "<h3>" + s.nom + "</h3>" +
                 "<p>" + s.court + '</p><span class="lien-fleche">Ver o serviço</span></a>';
         }).join("");
     }
@@ -209,7 +179,6 @@
         var trabalhos = MEDIAS.filter(function (m) { return m.cat === s.id; }).slice(0, 3);
         while (trabalhos.length < 3) trabalhos.push({ type: "photo", titre: "Foto a fornecer" });
         boite.innerHTML =
-            (s.a_confirmar ? '<p class="msg err">Serviço proposto na maquete — a confirmar com o cliente.</p>' : "") +
             photo(s.photo, s.couleur) +
             "<h2>O que fazemos</h2><p>" + s.texte + "</p>" +
             "<ul>" + s.points.map(function (p) { return "<li>" + p + "</li>"; }).join("") + "</ul>" +
@@ -344,9 +313,7 @@
                 e.preventDefault();
                 var msg = $(".msg", f);
                 if (msg) { msg.className = "msg ok"; msg.textContent = f.getAttribute("data-maquete"); }
-                var aller = f.getAttribute("data-aller");
-                if (aller) setTimeout(function () { location.href = aller; }, 600);
-                else f.reset();
+                f.reset();
             });
         });
 
@@ -359,30 +326,6 @@
                 "Serviço: " + (s ? s.nom : "Outro") + "\nViatura: " + (devis.viatura.value.trim() || "-") +
                 "\n" + devis.mensagem.value.trim();
             window.open(lien_wa(texte), "_blank", "noopener");
-        });
-
-        // Aperçu local des fichiers choisis (admin)
-        $$("input[type=file][data-apercu]").forEach(function (inp) {
-            var cible = document.getElementById(inp.getAttribute("data-apercu"));
-            inp.addEventListener("change", function () {
-                cible.textContent = "";
-                Array.prototype.forEach.call(inp.files, function (f) {
-                    var url = URL.createObjectURL(f);
-                    var el = document.createElement(/^video\//.test(f.type) ? "video" : "img");
-                    el.src = url; if (el.tagName === "VIDEO") el.muted = true; else el.alt = f.name;
-                    cible.appendChild(el);
-                });
-            });
-        });
-
-        // Boutons admin factices
-        document.addEventListener("click", function (e) {
-            var b = e.target.closest("[data-confirmer]");
-            if (!b) return;
-            if (!confirm(b.getAttribute("data-confirmer"))) return;
-            var ligne = b.closest(".ligne-admin, tr");
-            if (b.hasAttribute("data-retirer") && ligne) ligne.remove();
-            else if (ligne) { var badge = $(".badge", ligne); if (badge) { badge.className = "badge ok"; badge.textContent = "Publicada"; } b.remove(); }
         });
     }
 
@@ -402,7 +345,6 @@
 
     /* ---------- Démarrage ---------- */
     injecter_site();
-    injecter_admin();
     brancher_tiroir();
     var rendus = {
         specialites: rendu_specialites,

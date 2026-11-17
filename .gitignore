@@ -1,3 +1,6 @@
 .env
 .claude/
 *.zip
+
+# Discussions internes, ne jamais committer
+lettres/
