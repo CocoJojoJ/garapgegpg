@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os nossos trabalhos | Auto PGP Oficina</title>
+<meta name="description" content="Fotos e vídeos dos trabalhos da Auto PGP Oficina.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="trabalhos">
+<div id="entete"></div>
+
+<main>
+<section class="entete-page">
+    <div class="conteneur">
+        <p class="fil"><a href="index.html">Início</a> › Os nossos trabalhos</p>
+        <h1>Os nossos trabalhos</h1>
+        <p>Fotos, vídeos e publicidade da oficina. Clique numa publicação para a ver em grande.</p>
+    </div>
+</section>
+<section>
+    <div class="conteneur">
+        <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+            <h2 style="font-size:22px">Filtrar por especialidade</h2>
+            <div class="segment" role="group" aria-label="Tipo de publicação">
+                <button type="button" class="on" data-type="tous">Tudo</button>
+                <button type="button" data-type="photo">Fotos</button>
+                <button type="button" data-type="video">Vídeos</button>
+            </div>
+        </div>
+        <div class="filtres" data-rendu="filtres"></div>
+        <div class="medias" data-rendu="medias"></div>
+    </div>
+</section>
+<section class="fond-doux">
+    <div class="conteneur">
+        <div class="titre-section"><span class="surtitre">Antes / depois</span><h2>Compare o resultado</h2><p>Deslize a imagem para ver o antes e o depois.</p></div>
+        <div class="ba">
+            <div class="photo verte" data-label="Foto DEPOIS (a fornecer)"></div>
+            <div class="photo rouge avant" data-label="Foto ANTES (a fornecer)"></div>
+            <div class="barre"></div>
+            <span class="tag b">Antes</span><span class="tag a">Depois</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+        </div>
+    </div>
+</section>
+<section class="bande-cta">
+    <div class="conteneur">
+        <div><h2>Gostou do nosso trabalho?</h2><p>Deixe a sua avaliação: ajuda outros clientes a escolher.</p></div>
+        <div class="actions"><a class="btn marine" href="avis.html#deixar" data-icone="etoile">Avaliar os nossos trabalhos</a></div>
+    </div>
+</section>
+</main>
+
+<div id="pied"></div>
+<script src="js/donnees.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

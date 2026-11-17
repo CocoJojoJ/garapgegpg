@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Auto PGP Oficina</title>
+<meta name="description" content="Contacte a Auto PGP Oficina por telefone ou WhatsApp.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contacto">
+<div id="entete"></div>
+
+<main>
+<section class="entete-page">
+    <div class="conteneur">
+        <p class="fil"><a href="index.html">Início</a> › Contacto</p>
+        <h1>Contacte-nos</h1>
+        <p>Sem marcação online: ligue-nos ou envie uma mensagem pelo WhatsApp.</p>
+    </div>
+</section>
+<section>
+    <div class="conteneur mise-en-page">
+        <div>
+            <h2 style="margin-bottom:16px">Pedir um orçamento pelo WhatsApp</h2>
+            <form class="formulaire carte" id="form-devis">
+                <div class="deux">
+                    <label>O seu nome<input name="nome" maxlength="60" required></label>
+                    <label>Serviço<select name="servico" data-rendu="options-services"><option value="">Outro / não sei</option></select></label>
+                </div>
+                <label>Viatura <span class="aide">(marca, modelo, ano)</span><input name="viatura" maxlength="80" placeholder="Ex.: Toyota Hilux 2015"></label>
+                <label>Mensagem<textarea name="mensagem" maxlength="600" placeholder="Descreva o problema" required></textarea></label>
+                <button class="btn wa" type="submit" data-icone="wa">Enviar pelo WhatsApp</button>
+                <p class="msg">O WhatsApp abre com a mensagem já escrita. Basta carregar em enviar.</p>
+            </form>
+            <h2 style="margin:34px 0 16px">Onde estamos</h2>
+            <div class="carte-geo"><div><b>📍</b>Mapa Google a inserir quando tivermos o endereço exato.</div></div>
+        </div>
+        <aside class="coordonnees">
+            <div class="coord" data-icone="tel"><div><b>Telefone</b><a class="fort" data-tel></a></div></div>
+            <div class="coord" data-icone="wa"><div><b>WhatsApp</b><a data-wa="Olá AUTO PGP OFICINA!">Enviar uma mensagem</a></div></div>
+            <div class="coord" data-icone="carte"><div><b>Morada</b><span>Endereço a confirmar</span></div></div>
+            <div class="coord" data-icone="horloge"><div style="flex:1"><b>Horário</b>
+                <table class="horaires"><tr><td>Segunda a sexta</td><td>a confirmar</td></tr><tr><td>Sábado</td><td>a confirmar</td></tr><tr><td>Domingo</td><td>a confirmar</td></tr></table></div></div>
+        </aside>
+    </div>
+</section>
+</main>
+
+<div id="pied"></div>
+<script src="js/donnees.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

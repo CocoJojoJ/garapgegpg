@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Publicar | Administração Auto PGP</title>
+<link rel="icon" href="img/logo.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin" data-page="a-publicar">
+<div class="admin-cadre">
+<div id="admin-cote"></div>
+<main class="admin-principal">
+    <p class="bandeau-maquete" style="border-radius:6px;margin-bottom:18px">Maquete: nenhuma ação é guardada. O acesso real será protegido por palavra-passe.</p>
+    <div class="admin-barre"><h1>Publicar fotos ou vídeos</h1><span class="qui">Ligado como <b>admin</b> · <a href="admin-connexion.html" style="text-decoration:underline">Sair</a></span></div>
+    <form class="formulaire carte" data-maquete="Maquete: publicação simulada (nada foi enviado).">
+        <div class="deux">
+            <label>Título<input maxlength="120" placeholder="Ex.: Pintura completa, Toyota Hilux" required></label>
+            <label>Especialidade<select data-rendu="options-services" required><option value="">Escolher…</option><option value="publicidade">Publicidade</option></select></label>
+        </div>
+        <label>Descrição <span class="aide">(aparece por baixo da foto no site)</span><textarea maxlength="600" placeholder="Ex.: Reparação de bate-chapa e pintura total."></textarea></label>
+        <div class="deux">
+            <div class="depot"><b style="color:var(--navy)">Fotos ou vídeos</b><br><span class="aide">JPG, PNG, WebP, MP4 — várias de uma vez</span><br>
+                <input type="file" accept="image/*,video/*" multiple data-apercu="apercu-medias" aria-label="Fotos ou vídeos"></div>
+            <div class="depot"><b style="color:var(--navy)">Antes / depois</b> <span class="aide">(opcional)</span><br>
+                <label style="font-weight:400">Foto ANTES<input type="file" accept="image/*" data-apercu="apercu-ba"></label>
+                <label style="font-weight:400">Foto DEPOIS<input type="file" accept="image/*" data-apercu="apercu-ba"></label></div>
+        </div>
+        <div class="apercus" id="apercu-medias"></div>
+        <div class="apercus" id="apercu-ba"></div>
+        <label style="display:flex;gap:10px;align-items:center;font-weight:600"><input type="checkbox" style="width:auto" checked> Mostrar também na página inicial</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="submit">Publicar</button><a class="btn fantome" href="admin-medias.html">Cancelar</a></div>
+        <p class="msg" role="status"></p>
+    </form>
+
+</main>
+</div>
+<script src="js/donnees.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
